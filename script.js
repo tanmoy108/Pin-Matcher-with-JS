@@ -8,6 +8,8 @@ document.getElementById("pinBtn").addEventListener("click", function () {
   input.value = random;
   a = 3;
   tryPin.innerText = a + " try left";
+  document.getElementById("yes").classList.add("hide");
+  document.getElementById("not").classList.add("hide");
 });
 
 document.querySelector("#numberBtn").addEventListener("click", function (e) {
@@ -33,10 +35,10 @@ document.getElementById("cross").addEventListener("click", function () {
 
 });
 document.getElementById("submit").addEventListener("click", function () {
-  if (input.value == numberInput.value) {
+  if (input.value == numberInput.value && input.value!= "" && numberInput.value != "" ) {
     document.getElementById("yes").classList.remove("hide");
     document.getElementById("not").classList.add("hide");
-  } else {
+  } else if (input.value != numberInput.value) {
     document.getElementById("not").classList.remove("hide");
     document.getElementById("yes").classList.add("hide");
     a--;
